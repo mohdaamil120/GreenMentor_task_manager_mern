@@ -15,6 +15,7 @@ export default function Navbar() {
         <Link to={"/"}>Tasks</Link>
         <Link to={"/login"}>Login</Link>
         <Link to={"/register"}>Register</Link>
+        <Link to={"/profile"}>Profile</Link> 
         <Link to={"/addtask"}>Add New Task</Link>
         </Menu>
     

@@ -4,6 +4,7 @@ import Signup from './Signup'
 import Login from './Login'
 import CreateTask from './CreateTask'
 import Tasks from './Tasks'
+import ProfilePage from './ProfilePage'
 
 export default function MainRoutes() {
   return (
@@ -13,6 +14,7 @@ export default function MainRoutes() {
             <Route path='/login' element={<Login/>}/>
             <Route path='/addtask' element={<CreateTask/>}/>
             <Route path='/' element={<Tasks/>}/>
+            <Route path="/profile" element={<ProfilePage/>} />
         </Routes>
     </div>
   )

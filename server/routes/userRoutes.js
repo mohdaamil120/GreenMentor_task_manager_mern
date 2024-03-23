@@ -3,6 +3,7 @@ const {UserModel} = require("../models/userModel")
 const bcrypt = require("bcrypt")
 const jwt = require("jsonwebtoken")
 require("dotenv").config()
+const { auth } = require("../middleware/authMiddleware")
 
 
 const userRouter = express.Router()
@@ -71,10 +72,45 @@ userRouter.post("/login", async(req,res)=>{
 
 // user profile
 
-userRouter.get("/profile", (req,res)=>{
+userRouter.get("/profile", auth, async(req,res)=>{
+    try {
+        // Get the user ID from the request body
+        const userId = req.body.userID;
     
+        // Find the user based on the ID
+        const user = await UserModel.findById(userId).select("-password");
+    
+        // If user found, send user details in response
+        if (user) {
+          res.status(200).send(user);
+        } else {
+          res.status(404).send({ "message": "User not found" });
+        }
+      } catch (err) {
+        res.status(400).send({ "message": "Server Error", "error": err });
+      }
 })
 
+
+// Update profile route
+userRouter.patch("/profile", auth, async (req, res) => {
+    try {
+      const userId = req.body.userID;
+      const { username, email } = req.body;
+      const updatedUser = await UserModel.findByIdAndUpdate(
+        userId,
+        { username, email },
+        { new: true }
+      ).select("-password");
+      if (updatedUser) {
+        res.status(200).send(updatedUser);
+      } else {
+        res.status(404).send({ "message": "User not found" });
+      }
+    } catch (err) {
+      res.status(400).send({ "message": "Server Error", "error": err });
+    }
+  });
 
 module.exports = {
     userRouter
