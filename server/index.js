@@ -2,12 +2,15 @@ const express = require("express")
 const {connection} = require("./db") 
 const { userRouter } = require("./routes/userRoutes")
 const { taskRouter } = require("./routes/taskRoute")
+const cors = require('cors')
 
 // PORT
 const PORT = process.env.PORT || 8080
 
 const app = express()
 app.use(express.json())
+
+app.use(cors())
 
 // user routes when you hit (/users) it will take you through userRouter
 app.use("/users",userRouter)
