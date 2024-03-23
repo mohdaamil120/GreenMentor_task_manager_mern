@@ -1,0 +1,19 @@
+import React from 'react'
+import { Route, Routes } from 'react-router-dom'
+import Signup from './Signup'
+import Login from './Login'
+import CreateTask from './CreateTask'
+import Tasks from './Tasks'
+
+export default function MainRoutes() {
+  return (
+    <div>
+        <Routes>
+            <Route path='/register' element={<Signup/>}/>
+            <Route path='/login' element={<Login/>}/>
+            <Route path='/addtask' element={<CreateTask/>}/>
+            <Route path='/' element={<Tasks/>}/>
+        </Routes>
+    </div>
+  )
+}
