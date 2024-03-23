@@ -1,1 +1,9 @@
-# GreenMentor_task_manager_mern
+# Deployment
+
+## FrontEnd
+
+https://green-mentor-task-management.vercel.app/
+
+## Backend 
+
+https://greenmentor-task-manager-backend.onrender.com/
