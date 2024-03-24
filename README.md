@@ -94,12 +94,16 @@ npm start
 
 (**Login**)
 
-![Alt Text](https://raw.githubusercontent.com/mohdaamil120/English_Quest/main/client/src/images/login.png)
+![Alt Text](https://github.com/mohdaamil120/GreenMentor_task_manager_mern/blob/main/client/src/images/login.png)
 
-(**Books**)
+(**Tasks**)
 
-![Alt Text](https://raw.githubusercontent.com/mohdaamil120/English_Quest/main/client/src/images/book.png)
+![Alt Text](https://github.com/mohdaamil120/GreenMentor_task_manager_mern/blob/main/client/src/images/tasks.png)
 
 (**Register**)
 
-![Alt Text](https://raw.githubusercontent.com/mohdaamil120/English_Quest/main/client/src/images/register.png)
+![Alt Text](https://github.com/mohdaamil120/GreenMentor_task_manager_mern/blob/main/client/src/images/register.png)
+
+(**Edit**)
+
+![Alt Text](https://github.com/mohdaamil120/GreenMentor_task_manager_mern/blob/main/client/src/images/edit.png)
